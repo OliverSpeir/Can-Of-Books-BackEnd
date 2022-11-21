@@ -3,40 +3,32 @@ require('dotenv').config();
 
 mongoose.connect(process.env.DB_URL);
 
-const Cat = require('./models/Book');
+const Book = require('./Models/Book');
 
 async function seed() {
   // seed the database with some cats, so I can retrieve them
-  const bookOne = new Book({
-    title: 'Dictionary',
-    description: 'All the words ever',
-    status: true,
-  });
-  bookOne.save(function (err) {
-    if (err) console.error(err);
-    else console.log('seeded Dictionary');
-  });
-  const bookTwo = new Book({
-    title: 'Dune',
-    description: 'The Best Book Ever',
-    status: true,
-  });
-  bookTwo.save(function (err) {
-    if (err) console.error(err);
-    else console.log('seeded db');
-  });
-  const bookThree = new Book({
-    title: 'Harry Potter',
-    description: 'Youre a wizard harry',
-    status: true,
-  });
-  bookThree.save(function (err) {
-    if (err) console.error(err);
-    else console.log('seeded HP');
-  });
-  console.log('seeded DB');
 
+    await Book.create({
+        title: 'Dictionary',
+        description: 'All the words ever',
+        status: true
+    });
+    console.log('seeded dictionary')
+    await Book.create({
+        title: 'Dune',
+        description: 'Best book ever',
+        status: true
+    });
+    console.log('seeded Dune')
+    await Book.create({
+        title: 'Harry Potter',
+        description: 'youre a wizard harry',
+        status: true
+    });
+    console.log('seeded HP')
   mongoose.disconnect();
 }
+
+
 
 seed();
