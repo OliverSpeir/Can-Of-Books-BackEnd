@@ -25,9 +25,32 @@ A carousel of books pulled from mongo database
 <!-- See below -->
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-Name of feature: 
+### Logistical
+
+What hours will you be available to communicate? 1-5pm PST
+What platform will you use to communicate (ie. Slack, phone …)? Slack/ REMO
+How often will you take breaks? Every hour
+What is your plan if you start to fall behind? Put in a ticket, and if that fails contact instructor.
+
+### Cooperative
+
+Make a list of each parson’s strengths.
+Oliver: Communication
+Cody: Time management
+How can you best utilize these strengths in the development of your application? By communicating throughout the development and making a plan.
+In what areas do you each want to develop greater strength?
+Oliver: Get better at front-end design
+Cody: Get better at React.js
+Knowing that every person in your team needs to understand the code, how do you plan to approach the day-to-day development? Asking questions.
+
+### Conflict Resolution
+
+What will your team do if one person is pulling all the weight while the other person is not contributing? Communicate issues and make a plan for dividing work
+What will your team do if one person is taking over the project and not letting the other member contribute? Communicate issues and try to plan for the other person to do component on their own.
+How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level? Build off each others strengths.
+
+Name of feature:
 
 Estimate of time needed to complete: _____
 
