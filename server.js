@@ -8,6 +8,7 @@ const Book = require('./Models/Book');
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 
 const PORT = process.env.PORT || 3002;
 
@@ -19,6 +20,17 @@ app.get('/books', async (request,response) => {
   if (request.query.title) {    filterQuery.title = request.query.title;  }
   const books = await Book.find(filterQuery);
   response.send(books);
+})
+
+app.post('/books', async (request,response) => {
+  try{
+    const newBook = await Book.create(request.body);
+    response.send(newBook);
+
+  }catch(error){
+    console.error(error);
+    response.status(500).send('Error creating Book');
+  }
 })
 
 app.get('/test', (request, response) => {
