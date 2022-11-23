@@ -13,7 +13,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 3002;
 
 mongoose.connect(process.env.DB_URL);
-
+app.put('/books/:id', putBooks);
 
 app.get('/books', async (request,response) => {
   const filterQuery = {};
@@ -32,6 +32,18 @@ app.post('/books', async (request,response) => {
     response.status(500).send('Error creating Book');
   }
 })
+
+async function putBooks(request, response, next) {
+  try {
+    let id = request.params.id;
+    let updatedBookData = request.body;
+    let updatedBook = await Book.findByIdAndUpdate(id, updatedBookData, { new: true, overwrites: true });
+    response.status(200).send(updatedBook);
+
+  } catch(err) {
+    next(err);
+  }
+}
 
 app.delete('/books/:id', async (request, response) => {
   const id = request.params.id;
