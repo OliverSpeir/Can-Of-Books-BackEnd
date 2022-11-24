@@ -33,7 +33,7 @@ app.post('/books', async (request,response) => {
   }
 })
 
-async function putBooks(request, response, next) {
+async function putBooks(request, response) {
   try {
     let id = request.params.id;
     let updatedBookData = request.body;
@@ -41,7 +41,8 @@ async function putBooks(request, response, next) {
     response.status(200).send(updatedBook);
 
   } catch(err) {
-    next(err);
+    console.error(error);
+    response.status(500).send(`Unable to edit book with id ${id}`)
   }
 }
 
